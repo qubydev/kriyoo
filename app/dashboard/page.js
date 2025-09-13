@@ -1,17 +1,16 @@
 import React from 'react';
-import Link from 'next/link';
+import SignoutButton from '@/components/auth/signout-button';
 import { getSession } from '@/auth';
-import { redirect } from 'next/navigation';
 
 export default async function Page() {
   const session = await getSession();
 
-  if (session) redirect('/dashboard');
+  // if (!session) redirect('/login');
 
   return (
     <div>
-      <h1>Hi!</h1>
-      <Link href="/login">Login</Link>
+      <h1>Dashboard</h1>
+      <SignoutButton />
     </div>
   )
 }
