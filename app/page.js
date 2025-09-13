@@ -1,17 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
 import { getSession } from '@/auth';
-import { redirect } from 'next/navigation';
 
 export default async function Page() {
   const session = await getSession();
 
-  if (session) redirect('/dashboard');
-
   return (
     <div>
+      {session ? (
+        <Link href="/dashboard">
+          <button>Dashboard</button>
+        </Link>
+      ) : (
+        <Link href="/login">
+          <button>Login</button>
+        </Link>
+      )}
       <h1>Hi!</h1>
-      <Link href="/login">Login</Link>
     </div>
   )
 }
