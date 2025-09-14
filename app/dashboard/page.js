@@ -1,5 +1,4 @@
 import React from 'react';
-import SignoutButton from '@/components/auth/signout-button';
 import { getSession } from '@/auth';
 
 export default async function Page() {
@@ -8,9 +7,8 @@ export default async function Page() {
   if (!session) redirect('/login');
 
   return (
-    <div>
+    <div className='p-2'>
       <h1>Dashboard</h1>
-      <SignoutButton />
     </div>
   )
 }

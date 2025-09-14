@@ -9,7 +9,7 @@ export default async function Page() {
     if (session) redirect('/dashboard');
 
     return (
-        <div>
+        <div className='w-screen flex items-center justify-center mt-16 p-2'>
             <LoginCard />
         </div>
     )

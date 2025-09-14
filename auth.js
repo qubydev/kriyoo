@@ -10,6 +10,9 @@ export const auth = betterAuth({
     pages: {
         signIn: '/login',
     },
+    emailAndPassword: {
+        enabled: true,
+    },
     socialProviders: {
         github: {
             clientId: process.env.GITHUB_CLIENT_ID,
