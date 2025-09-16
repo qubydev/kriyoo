@@ -1,16 +1,24 @@
 import React from 'react';
 import Link from 'next/link';
 import { APP_NAME } from '@/lib/config';
-import NavbarClient from './client';
+import UserProfile from './user-profile';
+import Image from 'next/image';
 
 export default function Navbar() {
-
     return (
-        <nav className='p-4 border-b flex items-center justify-between gap-2'>
-            <Link href="/">
-                <h1 className='text-xl font-bold'>{APP_NAME}</h1>
+        <nav className='flex items-center gap-2 h-14 px-4'>
+            <Link href="/" className='flex items-center justify-center gap-2'>
+                <Image
+                    src="/logo.png"
+                    alt="Logo"
+                    width={50}
+                    height={50}
+                    className="size-8"
+                />
+                <h1 className='text-2xl font-bold text-primary'>{APP_NAME}</h1>
             </Link>
-            <NavbarClient />
+            <div className='flex-1' />
+            <UserProfile />
         </nav>
     )
 }
